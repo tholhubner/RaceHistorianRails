@@ -7,6 +7,10 @@ class TeamsController < ApplicationController
 		@team = Team.find(params[:id])
 	end
 
+	def new
+		@team = Team.new
+	end
+
 	def create
 		@team = Team.new(team_params)
 
@@ -32,7 +36,7 @@ class TeamsController < ApplicationController
 	end
 
 	def destroy
-		@team = Team.find(param[:id])
+		@team = Team.find(params[:id])
 		@team.destroy
 
 		redirect_to root_path, status: :see_other

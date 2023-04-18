@@ -1,0 +1,29 @@
+<%= form_with model: @team do |form| %>
+	<div>
+		<%= form.label :name %><br>
+		<%= form.text_field :name %>
+		<% @team.errors.full_messages_for(:name).each do |message| %>
+			<div><%= message %></div>
+		<% end %>
+	</div>
+
+	<div>
+		<%= form.label :nationality %><br>
+		<%= form.text_area :nationality %>
+		<% @team.errors.full_messages_for(:nationality).each do |message| %>
+			<div><%= message %></div>
+		<% end %>
+	</div>
+
+	<div>
+		<%= form.label :founded %><br>
+		<%= form.text_area :founded %>
+		<% @team.errors.full_messages_for(:founded).each do |message| %>
+			<div><%= message %></div>
+		<% end %>
+	</div>
+
+	<div>
+		<%= form.submit %>
+	</div>
+<% end %>
